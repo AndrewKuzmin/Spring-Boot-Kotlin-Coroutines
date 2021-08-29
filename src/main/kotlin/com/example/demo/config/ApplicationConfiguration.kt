@@ -16,7 +16,7 @@ class ApplicationConfiguration {
 
     @Bean
     fun commandLineRunnerShowBeans(ctx: ApplicationContext): CommandLineRunner {
-        return CommandLineRunner { args: Array<String?>? ->
+        return CommandLineRunner { _: Array<String?>? ->
             val beanNames = ctx.beanDefinitionNames
             logger.info(String.format("Let's inspect the %s beans provided by Spring Boot:", beanNames.size))
             Arrays.sort(beanNames)
@@ -25,4 +25,5 @@ class ApplicationConfiguration {
             }
         }
     }
+
 }
